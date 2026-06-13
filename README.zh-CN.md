@@ -88,22 +88,6 @@ cxc use
 cxc list
 ```
 
-直接把补全安装进 shell 配置：
-
-```bash
-cxc completion install zsh
-source ~/.zshrc
-```
-
-或者：
-
-```bash
-cxc completion install bash
-source ~/.bashrc
-```
-
-安装后，输入 `cxc use cc-` 再按 `Tab`，或者 `cxc use cx-` 再按 `Tab`，就会按前缀补全对应已保存配置。
-
 所有输入都是明文输入，方便直接键入或粘贴。
 
 ## 平台支持

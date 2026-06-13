@@ -6,9 +6,6 @@ pub enum Command {
     Save { name: String },
     Use { name: Option<String> },
     List,
-    Completion { shell: String },
-    InstallCompletion { shell: String },
-    CompleteProfiles { prefix: String },
     Help,
 }
 
@@ -33,17 +30,6 @@ where
                 name: Some(name.clone()),
             })
         }
-        [cmd, action, shell] if cmd == "completion" && action == "install" => {
-            Ok(Command::InstallCompletion {
-                shell: shell.clone(),
-            })
-        }
-        [cmd, shell] if cmd == "completion" => Ok(Command::Completion {
-            shell: shell.clone(),
-        }),
-        [cmd, prefix] if cmd == "__complete_profiles" => Ok(Command::CompleteProfiles {
-            prefix: prefix.clone(),
-        }),
         [flag] if flag == "--help" || flag == "-h" => Ok(Command::Help),
         [] => Err(format!("choose a command\n{}", usage_text())),
         _ => Err(format!("unsupported arguments\n{}", usage_text())),
@@ -57,9 +43,7 @@ pub fn usage_text() -> &'static str {
   cxc current
   cxc save <name>
   cxc use [cc-name|cx-name]
-  cxc list
-  cxc completion <zsh|bash>
-  cxc completion install <zsh|bash>"
+  cxc list"
 }
 
 pub fn validate_profile_name(name: &str) -> Result<(), String> {

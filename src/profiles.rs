@@ -76,13 +76,6 @@ pub fn list_profile_names(home: &Path) -> Result<Vec<String>, String> {
     Ok(names)
 }
 
-pub fn complete_profiles(home: &Path, prefix: &str) -> Result<Vec<String>, String> {
-    Ok(list_profile_names(home)?
-        .into_iter()
-        .filter(|name| name.starts_with(prefix))
-        .collect())
-}
-
 pub fn list_profiles_by_kind(home: &Path, kind: ProfileKind) -> Result<Vec<String>, String> {
     let prefix = profile_prefix(kind);
     Ok(list_profile_names(home)?

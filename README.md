@@ -88,22 +88,6 @@ List saved profiles:
 cxc list
 ```
 
-Install shell completion directly into your shell config:
-
-```bash
-cxc completion install zsh
-source ~/.zshrc
-```
-
-or
-
-```bash
-cxc completion install bash
-source ~/.bashrc
-```
-
-After that, `cxc use cc-` + `Tab` or `cxc use cx-` + `Tab` will complete saved profiles by prefix.
-
 All inputs are plain text, so typing or pasting works directly.
 
 ## Platform support
