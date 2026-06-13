@@ -54,6 +54,56 @@ Switch Codex config:
 cxc --cx
 ```
 
+Show the current active config:
+
+```bash
+cxc current
+```
+
+Save a reusable profile into `~/.cxc/profiles/<name>.toml`:
+
+```bash
+cxc save work
+```
+
+`cxc` will ask whether this profile is for Claude Code (`cc`) or Codex (`cx`), then store it as `cc-work` or `cx-work`.
+
+Apply a saved profile directly:
+
+```bash
+cxc use cc-work
+```
+
+Or just run:
+
+```bash
+cxc use
+```
+
+Then `cxc` will ask whether you want a Claude Code or Codex profile and let you choose from the saved list.
+
+List saved profiles:
+
+```bash
+cxc list
+```
+
+Install shell completion directly into your shell config:
+
+```bash
+cxc completion install zsh
+source ~/.zshrc
+```
+
+or
+
+```bash
+cxc completion install bash
+source ~/.bashrc
+```
+
+After that, `cxc use cc-` + `Tab` or `cxc use cx-` + `Tab` will complete saved profiles by prefix.
+
 All inputs are plain text, so typing or pasting works directly.
 
 ## Platform support

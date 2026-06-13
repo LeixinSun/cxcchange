@@ -54,6 +54,56 @@ cxc --cc
 cxc --cx
 ```
 
+查看当前正在使用的配置：
+
+```bash
+cxc current
+```
+
+保存一个可复用配置到 `~/.cxc/profiles/<name>.toml`：
+
+```bash
+cxc save work
+```
+
+执行时会先问你这是给 Claude Code (`cc`) 还是 Codex (`cx`) 用的，然后自动保存成 `cc-work` 或 `cx-work`。
+
+直接使用一个已保存配置：
+
+```bash
+cxc use cc-work
+```
+
+如果你只执行：
+
+```bash
+cxc use
+```
+
+程序会先问你要用 `cc` 还是 `cx`，再把这一类已保存配置列出来让你选。
+
+列出已保存配置：
+
+```bash
+cxc list
+```
+
+直接把补全安装进 shell 配置：
+
+```bash
+cxc completion install zsh
+source ~/.zshrc
+```
+
+或者：
+
+```bash
+cxc completion install bash
+source ~/.bashrc
+```
+
+安装后，输入 `cxc use cc-` 再按 `Tab`，或者 `cxc use cx-` 再按 `Tab`，就会按前缀补全对应已保存配置。
+
 所有输入都是明文输入，方便直接键入或粘贴。
 
 ## 平台支持
